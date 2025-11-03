@@ -5,7 +5,7 @@
   <p align="center">
     A free, simple, and open-source JSON API for fetching in-game stock and economy data from popular Roblox games.
     <br />
-    <a href="https://stock-apis.vercel.app/"><strong>Visit the Homepage »</strong></a>
+    <a href="https://stocktracker-rbx.netlify.app/"><strong>Visit the Homepage »</strong></a>
     <br />
     <br />
     <a href="https://rvlt.gg/2f9G59bQ">Report a Bug</a>
