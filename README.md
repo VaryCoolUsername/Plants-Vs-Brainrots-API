@@ -15,46 +15,74 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/VaryCoolUsername/Plants-Vs-Brainrots-API/stargazers"><img src="https://img.shields.io/github/stars/VaryCoolUsername/Grow-A-Garden-API?style=flat-square" alt="Stars"></a>
-  <a href="https://github.com/VaryCoolUsername/Plants-Vs-Brainrots-API/network/members"><img src="https://img.shields.io/github/forks/VaryCoolUsername/Grow-A-Garden-API?style=flat-square" alt="Forks"></a>
-  <a href="https://github.com/VaryCoolUsername/Plants-Vs-Brainrots-API/issues"><img src="https://img.shields.io/github/issues/VaryCoolUsername/Grow-A-Garden-API?style=flat-square" alt="Issues"></a>
-  <a href="https://github.com/VaryCoolUsername/Plants-Vs-Brainrots-API/blob/main/LICENSE"><img src="https://img.shields.io/github/license/VaryCoolUsername/Grow-A-Garden-API?style=flat-square" alt="License"></a>
-  <a href="https://github.com/VaryCoolUsername/Plants-Vs-Brainrots-API/commits/main"><img src="https://img.shields.io/github/last-commit/VaryCoolUsername/Grow-A-Garden-API?style=flat-square" alt="Last Commit"></a>
+  <a href="https://github.com/VaryCoolUsername/Plants-Vs-Brainrots-API/stargazers"><img src="https://img.shields.io/github/stars/VaryCoolUsername/Plants-Vs-Brainrots-API?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/VaryCoolUsername/Plants-Vs-Brainrots-API/network/members"><img src="https://img.shields.io/github/forks/VaryCoolUsername/Plants-Vs-Brainrots-API?style=flat-square" alt="Forks"></a>
+  <a href="https://github.com/VaryCoolUsername/Plants-Vs-Brainrots-API/issues"><img src="https://img.shields.io/github/issues/VaryCoolUsername/Plants-Vs-Brainrots-API?style=flat-square" alt="Issues"></a>
+  <a href="https://github.com/VaryCoolUsername/Plants-Vs-Brainrots-API/blob/main/LICENSE"><img src="https://img.shields.io/github/license/VaryCoolUsername/Plants-Vs-Brainrots-API?style=flat-square" alt="License"></a>
+  <a href="https://github.com/VaryCoolUsername/Plants-Vs-Brainrots-API/commits/main"><img src="https://img.shields.io/github/last-commit/VaryCoolUsername/Plants-Vs-Brainrots-API?style=flat-square" alt="Last Commit"></a>
 </p>
 
 ---
 
-Tired of complex setups or web scraping to get in-game stock data? This API provides simple, free, and semi-reliable JSON endpoints for a few popular Roblox games. It's perfect for developers creating Discord bots, web dashboards, or any other project that needs up-to-date in-game stock information.
+Tired of complex setups or fragile web scraping to get in-game stock data? This API exposes simple, consistent JSON endpoints for several Roblox games. Use it for Discord bots, dashboards, or scripts.
 
 ## 📖 Table of Contents
 
-- [✨ Features](#-features)
-- [💡 A Note on Performance](#-a-note-on-performance)
-- [🎮 Supported Games](#-supported-games)
-- [🚀 Quick Start](#-quick-start)
-- [🗂️ API Endpoints & Response Formats](#️-api-endpoints--response-formats)
-- [🤝 How to Contribute](#-how-to-contribute)
-- [📜 License](#-license)
+- [✨ Features](#features)  
+- [🔑 Key System](#key-system)
+- [💡 A Note on Performance](#a-note-on-performance)  
+- [🎮 Supported Games](#supported-games)  
+- [🚀 Quick Start](#quick-start)  
+- [📜 License](#license)
+- [🌱 Tracker](#tracker)
 
+---
+
+<a id="features"></a>
 ## ✨ Features
 
-- **🎮 Multi-Game Support:** A single API for fetching stock data from multiple Roblox games.
-- **⚡ Live Data:** Fetches data to provide the most current stock information.
-- **🆓 Completely Free:** No API keys, no rate limits, and no cost.
-- **🔄 CORS Enabled:** Use it directly from your frontend or backend applications without any hassle.
-- **🤝 Open to Contributions:** Easily request new games or contribute new endpoints.
-- **JSON Format:** Clean, predictable, and easy-to-parse JSON responses.
+- **Multi-Game Support** — single API surface for multiple Roblox games.  
+- **Live Data** — fetches current in-game stock when requested.  
+- **Free** — no cost to use. (See key system for limits.)  
+- **CORS Enabled** — usable from frontend or backend.  
+- **Open Source** — contributions welcome.  
+- **JSON Responses** — predictable, easy to parse.
 
+<a id="key-system"></a>
+## 🔑 Key System
+
+This API now requires an API key to protect against mass automated abuse.  
+- Get a key: `https://stockapis.onrender.com/getkey`  
+- View your key, limits and usage: `https://stockapis.onrender.com/key`  
+Keys are bound to your IP and subject to rate limits. Keep your key secret.
+
+<a id="a-note-on-performance"></a>
 ## 💡 A Note on Performance
 
-To ensure the data is always up-to-date, this API fetches information live when a request is made. This process can sometimes take a few seconds to complete. Additionally, as a serverless function, the first request after a period of inactivity may experience a "cold start," which adds a little extra delay.
+The API fetches live data on request. Expect occasional delays.  
+Cold starts and upstream game-server delays can add latency. Design your client with retries and caching.
 
+<a id="supported-games"></a>
 ## 🎮 Supported Games
 
 | Game | API Endpoint | Status |
-| :--- | :--- | :--- |
-| **Grow a Garden** | [`/api/growagarden/stocks`](https://stock-apis.vercel.app/api/growagarden/stocks) | ✅ Online |
-| **Plants vs Brainrots** | [`/api/plantsvsbrainrots/stocks`](https://stock-apis.vercel.app/api/plantsvsbrainrots/stocks) | ✅ Online |
-| ~~**Blox Fruits**~~ | `~~/api/bloxfruits/stocks~~` | ❌ Temporarily Unavailable |
+| :--- | :--- | :---: |
+| **Grow a Garden** | [`/api/growagarden/stocks`](https://stockapis.onrender.com/api/growagarden/stocks) | ✅ Online |
+| **Plants vs Brainrots** | [`/api/plantsvsbrainrots/stocks`](https://stockapis.onrender.com/api/plantsvsbrainrots/stocks) | ✅ Online |
+| ~~**Blox Fruits**~~ | `~~/api/bloxfruits/stocks~~` | ❌ discontinued |
 
-*Don't see the game you need? [Open an issue](https://rvlt.gg/2f9G59bQ) to request it!*
+Don't see your game? [Open an issue](https://rvlt.gg/2f9G59bQ) to request it.
+
+<a id="quick-start"></a>
+## 🚀 Quick Start
+
+Request example (url):
+"https://stockapis.onrender.com/api/growagarden/stocks?key=YOUR_KEY"
+
+<a id="tracker"></a>
+## Tracker
+
+[Ive already created a tracker for both games if you would like to use that.
+go here to use it.](https://stocktracker-rbx.netlify.app/)
+
+
